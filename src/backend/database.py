@@ -206,15 +206,18 @@ def save_vendor(vendor):
 # Save quote items
 # -----------------------------------------
 
-def save_quote_items(
-    vendor_id,
-    items
-):
+def save_quote_items(vendor_id, items):
 
     connection = get_connection()
-
     cursor = connection.cursor()
 
+    # Remove previous quote items for this vendor
+    cursor.execute("""
+        DELETE FROM quote_items
+        WHERE vendor_id = ?
+    """, (vendor_id,))
+
+    # Insert the latest quote
     for item in items:
 
         cursor.execute("""
@@ -249,7 +252,6 @@ def save_quote_items(
         ))
 
     connection.commit()
-
     connection.close()
 
 
@@ -314,9 +316,15 @@ def save_normalized_vendor(normalized_vendor_quote):
 def save_questionnaire(vendor_id, questionnaire_rows):
 
     connection = get_connection()
-
     cursor = connection.cursor()
 
+    # Remove previous questionnaire responses for this vendor
+    cursor.execute("""
+        DELETE FROM questionnaire
+        WHERE vendor_id = ?
+    """, (vendor_id,))
+
+    # Insert the latest questionnaire responses
     for row in questionnaire_rows:
 
         question = row.get("Question", "")
@@ -339,7 +347,6 @@ def save_questionnaire(vendor_id, questionnaire_rows):
         ))
 
     connection.commit()
-
     connection.close()
 
 def get_questionnaire(vendor_id):
