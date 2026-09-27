@@ -1,5 +1,5 @@
 import streamlit as st
-from src.backend.hybrid_excel_parser import extract_text_tables
+from src.backend.excel_parser import extract_text_tables
 from src.backend.procurement_table_parser import parse_html_table
 from src.backend.normalize_vendor import normalize_vendor
 import streamlit as st

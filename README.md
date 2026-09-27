@@ -536,7 +536,7 @@ The current demo can run end-to-end without the FastAPI layer.
 
 ------------------------------------------------------------------------
 
-## 13. Current Status
+## 12. Components 
 
 ### Completed
 
@@ -564,7 +564,7 @@ The current demo can run end-to-end without the FastAPI layer.
 
 ------------------------------------------------------------------------
 
-## 14. Key Takeaway
+## 13. Key Takeaway
 
 The prototype is intentionally focused on the core procurement
 intelligence loop:
