@@ -1,5 +1,4 @@
 from unstructured.partition.xlsx import partition_xlsx
-from src.backend.utilis import * 
 from src.logger_config import log
 import os
 import tempfile
