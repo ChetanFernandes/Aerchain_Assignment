@@ -1,0 +1,15 @@
+streamlit==1.64.0
+langchain==1.4.2
+langchain-openai==1.6.6
+langchain-core==1.6.5
+langgraph==1.2.12
+openai==3.19.2
+
+openpyxl==3.1.5
+unstructured==0.18.32
+beautifulsoup4==4.15.0
+msoffcrypto-tool==6.0.0
+
+fastapi==0.141.1
+uvicorn==0.54.0
+python-dotenv==1.2.3
