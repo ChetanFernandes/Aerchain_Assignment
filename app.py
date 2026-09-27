@@ -43,37 +43,24 @@ if uploaded_files:
             # 1. Extract
             elements = extract_text_tables(file_bytes)
 
-            st.success(
-                f"Extracted {len(elements)} table element(s)"
-            )
+            st.success(f"Extracted {len(elements)} table element(s)")
 
             # 2. Show extracted tables
             for i, element in enumerate(elements, start=1):
 
                 st.write(f"### Extracted Table {i}")
 
-                html = getattr(
-                    element.metadata,
-                    "text_as_html",
-                    None,
-                )
+                html = getattr(element.metadata, "text_as_html", None,)
 
                 if html:
-                    st.markdown(
-                        html,
-                        unsafe_allow_html=True,
-                    )
+                    st.markdown(html, unsafe_allow_html=True,)
 
             # 3. Parse tables
             tables = []
 
             for element in elements:
 
-                html = getattr(
-                    element.metadata,
-                    "text_as_html",
-                    None,
-                )
+                html = getattr(element.metadata,"text_as_html", None)
 
                 if html:
 
@@ -90,13 +77,7 @@ if uploaded_files:
                 vendor_info = tables[0]
                 items = tables[1]
                 print("SENDING TO NORMALIZE:", vendor_info)
-                normalized_vendor_quote = normalize_vendor(
-                    vendor_info,
-                    items,
-                )
-
-            
-
+                normalized_vendor_quote = normalize_vendor(vendor_info, items,)
                 validation_result = validate_vendor_quote(
                     normalized_vendor_quote.vendor,
                     normalized_vendor_quote.items,
@@ -105,8 +86,6 @@ if uploaded_files:
 
                 normalized_vendor_quote.validation_passed = validation_result.passed
                 normalized_vendor_quote.validation_issues = validation_result.issues
-
-
 
                 vendor_id = save_normalized_vendor(normalized_vendor_quote)
 
@@ -119,18 +98,13 @@ if uploaded_files:
                         questionnaire_rows
                     )
 
-                    st.success(
-                        f"Questionnaire saved for Vendor ID: {vendor_id}"
-                    )
+                    #st.success(f"Questionnaire saved for Vendor ID: {vendor_id}")
 
-                st.success(f"Vendor saved to database. Vendor ID: {vendor_id}")
+                #st.success(f"Vendor saved to database. Vendor ID: {vendor_id}")
 
 
                 if validation_result.passed:
-                    st.success(
-                        f"Validation Passed — "
-                        f"{len(normalized_vendor_quote.items)}/30 items matched"
-                    )
+                    st.success(f"Validation Passed — " f"{len(normalized_vendor_quote.items)}/30 items matched")
                 else:
                     st.warning("Buyer Review Required")
 
@@ -143,10 +117,7 @@ if uploaded_files:
                     f"quote items"
                 )
 
-          
-
-
-
+        
                 # 6. Show normalized items
                 st.write("### Normalized Items")
 
