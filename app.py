@@ -34,7 +34,7 @@ if uploaded_files:
 
     for file in uploaded_files:
 
-        st.write(f"📄 {file.name}")
+        st.write(f"{file.name}")
 
         file_bytes = file.getvalue()
 
@@ -157,12 +157,12 @@ if uploaded_files:
                     normalized_rows.append(
                         {
                             "Item ID": item.item_id,
-                            "Description": item.description,
-                            "RFQ Qty": item.rfq_qty,
-                            "RFQ UOM": item.rfq_uom,
-                            "Quoted UOM": item.quoted_uom,
-                            "Unit Price": item.unit_price,
-                            "Currency": item.currency,
+                            "Buyer_item_Description": item.description,
+                            "Buyer_requested_RFQ Qty": item.rfq_qty,
+                            "Buyer_RFQ_UOM": item.rfq_uom,
+                            "Vendor_Quoted_UOM": item.quoted_uom,
+                            "Vendor_Quoted_Unit_Price": item.unit_price,
+                            "Vendor_Quoted_Currency": item.currency,
                             "Lead Time": item.lead_time_days,
                         }
                     )

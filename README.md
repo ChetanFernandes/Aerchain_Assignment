@@ -520,8 +520,7 @@ This reduces the chance of the model overlooking an important edge case.
 
 ## 11. Running Locally
 
-Create/activate the Python environment and install the project
-dependencies.
+Create/activate the Python environment and install the project dependencies.
 
 Then run:
 
@@ -534,27 +533,6 @@ Streamlit file watcher can interact poorly with LangGraph's lazy module
 attributes in this environment.
 
 The current demo can run end-to-end without the FastAPI layer.
-
-------------------------------------------------------------------------
-
-## 12. Demo Flow
-
-Recommended walkthrough:
-
-1.  Introduce the procurement problem.
-2.  Show the 30-item RFQ.
-3.  Upload vendor quotations.
-4.  Show extraction and normalization.
-5.  Show validation.
-6.  Show missing RFQ lines.
-7.  Show UOM mismatch / pack-size ambiguity.
-8.  Show questionnaire information.
-9.  Open Buyer AI Analyst.
-10. Ask which items are missing from each vendor.
-11. Ask for pack-size/UOM ambiguities.
-12. Compare ITM-001 across vendors.
-13. Show that currency and UOM differences are not silently ignored.
-14. Close with the buyer-trust principle.
 
 ------------------------------------------------------------------------
 
@@ -583,41 +561,10 @@ Recommended walkthrough:
 -   Streamlit end-to-end demo
 -   FastAPI dependency bypassed for the final simple demo
 
-### Remaining for submission
-
--   Push project to GitHub
--   Deploy Streamlit Community Cloud
--   Configure deployment secrets
--   Verify hosted application
--   Record Loom/Google Drive walkthrough
--   Finalize submission document/PPT
--   Share GitHub/live-hosted links
 
 ------------------------------------------------------------------------
 
-## 14. Submission Deliverables
-
-The final submission will contain:
-
-1.  **Recorded walkthrough**
-    -   Loom or Google Drive
-2.  **Live application**
-    -   Streamlit Community Cloud URL
-3.  **Build document / PPT**
-    -   Architecture
-    -   What was built
-    -   Validation and comparison logic
-    -   AI/tool design
-    -   Buyer-trust decisions
-    -   Scope and trade-offs
-    -   What was not built
-4.  **Hosted build / repository**
-    -   GitHub repository
-    -   Streamlit deployment
-
-------------------------------------------------------------------------
-
-## 15. Key Takeaway
+## 14. Key Takeaway
 
 The prototype is intentionally focused on the core procurement
 intelligence loop:

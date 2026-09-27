@@ -8,7 +8,7 @@ class RFQItem:
     quantity: float
     uom: str
 
-
+# buyers master requirement,
 RFQ_ITEMS = [
     RFQItem("ITM-001", "Corrugated shipping carton 5-ply", 1200, "pcs"),
     RFQItem("ITM-002", "Stretch film 500mm x 23 micron", 350, "roll"),
